@@ -52,19 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return "$diaSemana, $diaMes de $mes de $año";
         }
 
-        // Mostrar los resultados en el modal
-        echo "<script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var resultList = document.getElementById('resultList');
-                    resultList.innerHTML += '<li class=\"list-group-item result-item\">Fecha Purga 100 días: " . formatearFechaEnEspañol($fecha100Dias) . "</li>';
-                    resultList.innerHTML += '<li class=\"list-group-item result-item\">Fecha Coli: " . formatearFechaEnEspañol($fecha80Dias) . "</li>';
-                    resultList.innerHTML += '<li class=\"list-group-item result-item\">Fecha de parto: " . formatearFechaEnEspañol($fechaParto) . "</li>';
-                    $('#resultModalLabel').text('Resultados - " . formatearFechaEnEspañol($fecha) . "');
-                    $('#resultModal').modal('show');
-                });
-              </script>";
+        // Mostrar los resultados
+        echo '<li class="list-group-item result-item">Fecha Purga 100 días: ' . formatearFechaEnEspañol($fecha100Dias) . '</li>';
+        echo '<li class="list-group-item result-item">Fecha Coli: ' . formatearFechaEnEspañol($fecha80Dias) . '</li>';
+        echo '<li class="list-group-item result-item">Fecha de parto: ' . formatearFechaEnEspañol($fechaParto) . '</li>';
     } else {
-        echo "<div class='alert alert-danger mt-4'>La fecha ingresada no es válida.</div>";
+        echo '<li class="list-group-item list-group-item-danger">La fecha ingresada no es válida.</li>';
     }
 }
 ?>
