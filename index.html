@@ -3,42 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Fechas</title>
+    <title>Calculadora de Fechas para la Granja</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            background-color: #f8f9fa; 
+            background-color: #f0f8e4; /* Color suave que evoca un ambiente rural */
+            font-family: 'Arial', sans-serif;
         }
         .container {
-            max-width: 600px; 
+            max-width: 500px; 
             margin-top: 50px; 
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4a7c2a; /* Verde oscuro */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #4a7c2a; 
+            border-color: #4a7c2a;
+        }
+        .btn-primary:hover {
+            background-color: #3b6a23; 
+            border-color: #3b6a23; 
+        }
+        .modal-header {
+            background-color: #4a7c2a; 
+            color: white;
         }
         .result-item {
             background-color: #e2f0d9; 
             border: 1px solid #c3e6cb; 
         }
-        .btn-primary {
-            background-color: #28a745; 
-            border-color: #28a745;
-        }
-        .btn-primary:hover {
-            background-color: #218838; 
-            border-color: #1e7e34; 
-        }
-        h1 {
-            color: #155724; 
-        }
-        .icon {
-            margin-right: 10px; 
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center"><i class="fas fa-piggy-bank icon"></i>Calculadora de Fechas para la Granja</h1>
-        <form id="dateForm" class="mt-4">
+        <h1><i class="fas fa-piggy-bank"></i> Calculadora de Fechas</h1>
+        <form id="dateForm">
             <div class="form-group">
                 <label for="fecha">Ingrese una fecha:</label>
                 <input type="date" id="fecha" name="fecha" class="form-control" required>
@@ -66,6 +80,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2023 Calculadora de Fechas para la Granja</p>
         </div>
     </div>
 
@@ -115,7 +133,7 @@
                     $('#resultModalLabel').text(`Resultados - ${formatearFechaEnEspañol(fecha)}`);
                     $('#resultModal').modal('show');
                 } else {
-                    alert('La fecha ingresada no es válida, intenta de nuevo.');
+                    alert('La fecha ingresada no es válida.');
                 }
             });
         });
