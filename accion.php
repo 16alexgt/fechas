@@ -2,8 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener la fecha ingresada
     $fechaIngresada = $_POST['fecha'];
-
-    dd($fechaIngresada);
+    return = $fechaIngresada;
     // Convertir la fecha a un objeto DateTime
     $fecha = DateTime::createFromFormat('Y-m-d', $fechaIngresada);
 
