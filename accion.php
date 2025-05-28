@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Convertir la fecha a un objeto DateTime
     $fecha = DateTime::createFromFormat('Y-m-d', $fechaIngresada);
-     return $fecha; 
 
     if ($fecha) {
         // Calcular las fechas
