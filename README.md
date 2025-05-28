@@ -19,9 +19,3 @@ Esta es una calculadora de fechas diseñada para ayudar a los agricultores a cal
 - CSS (Bootstrap)
 - JavaScript (jQuery)
 - PHP
-
-## Instalación
-
-1. Clona este repositorio en tu máquina local:
-   ```bash
-   git clone https://github.com/tu_usuario/nombre_del_repositorio.git
