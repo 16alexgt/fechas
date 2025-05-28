@@ -38,7 +38,7 @@
 <body>
     <div class="container">
         <h1 class="text-center"><i class="fas fa-piggy-bank icon"></i>Calculadora de Fechas para la Granja</h1>
-        <form method="post" action="accion.php" class="mt-4">
+        <form id="dateForm" class="mt-4">
             <div class="form-group">
                 <label for="fecha">Ingrese una fecha:</label>
                 <input type="date" id="fecha" name="fecha" class="form-control" required>
@@ -70,8 +70,29 @@
     </div>
 
     <!-- Incluir Bootstrap JS y dependencias (opcional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#dateForm').on('submit', function(event) {
+                event.preventDefault(); // Evitar el envío del formulario
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'process.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#resultList').html(response);
+                        $('#resultModal').modal('show');
+                    },
+                    error: function() {
+                        alert('Error al procesar la solicitud.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
