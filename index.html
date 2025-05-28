@@ -81,7 +81,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: 'process.php',
+                    url: 'accion.php',
                     data: $(this).serialize(),
                     success: function(response) {
                         $('#resultList').html(response);
