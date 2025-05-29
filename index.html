@@ -418,6 +418,9 @@
 
                 if (!isNaN(fecha.getTime())) {
                     // Calcular las fechas
+                    const fechaRepeticion = new Date(fecha);
+                    fechaRepeticion.setDate(fechaRepeticion.getDate() + 21);
+                    
                     const fecha100Dias = new Date(fecha);
                     fecha100Dias.setDate(fecha100Dias.getDate() + 100);
 
@@ -442,6 +445,7 @@
 
                     // Mostrar los resultados en el modal
                     $('#resultList').html('');
+                    $('#resultList').append(`<li class="list-group-item result-item">Fecha posible repetición: ${formatearFechaEnEspañol(fechaRepeticion)}</li>`);
                     $('#resultList').append(`<li class="list-group-item result-item">Fecha Purga 100 días: ${formatearFechaEnEspañol(fecha100Dias)}</li>`);
                     $('#resultList').append(`<li class="list-group-item result-item">Fecha Coli: ${formatearFechaEnEspañol(fecha80Dias)}</li>`);
                     $('#resultList').append(`<li class="list-group-item result-item">Fecha de parto: ${formatearFechaEnEspañol(fechaParto)}</li>`);

@@ -8,6 +8,7 @@ Esta es una calculadora de fechas diseñada para ayudar a los agricultores a cal
 
 - Interfaz de usuario sencilla y amigable.
 - Cálculo automático de:
+  - Fecha de posible repetición.
   - Fecha de purga a 100 días.
   - Fecha de coli a 85 días.
   - Fecha de parto a 114 días.
@@ -18,4 +19,3 @@ Esta es una calculadora de fechas diseñada para ayudar a los agricultores a cal
 - HTML
 - CSS (Bootstrap)
 - JavaScript (jQuery)
-- PHP
