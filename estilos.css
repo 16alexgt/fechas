@@ -1,0 +1,396 @@
+body {
+    background-color: #f0f8e4; /* Color suave que evoca un ambiente rural */
+    font-family: 'Arial', sans-serif;
+}
+.container {
+    max-width: 500px; 
+    margin-top: 50px; 
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #4a7c2a; /* Verde oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #4a7c2a; 
+    border-color: #4a7c2a;
+}
+.btn-primary:hover {
+    background-color: #3b6a23; 
+    border-color: #3b6a23; 
+}
+.modal-header {
+    background-color: #4a7c2a; 
+    color: white;
+}
+.result-item {
+    background-color: #e2f0d9; 
+    border: 1px solid #c3e6cb; 
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Estilos del cerdo */
+.piggy-wrapper {
+    position: relative;
+    width: 150px; /* Ancho reducido */
+    height: 150px; /* Alto reducido */
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px; /* Espacio superior */
+}
+
+.piggy-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom center;
+    animation: trembling 5s linear infinite;
+}
+
+@keyframes trembling {
+    0%, 19%, 21%, 23%, 25%, 27%, 29%, 30%, 60%, 61%, 100% {
+        transform: scale(1);
+    }
+    22%, 24%, 26%, 28%, 30% {
+        transform: scale(0.99);
+    }
+}
+
+.piggy {
+    position: absolute;
+    bottom: 20px; /* Ajuste de posición */
+    left: 50%;
+    margin-left: -75px; /* Ajuste de margen */
+    width: 120px; /* Ancho reducido */
+    height: 90px; /* Alto reducido */
+    display: block;
+    border-radius: 100px;
+    background-color: #d88fa0;
+}
+
+.nose {
+    position: absolute;
+    top: 30px; /* Ajuste de posición */
+    left: -10px; /* Ajuste de posición */
+    width: 20px; /* Ancho reducido */
+    height: 30px; /* Alto reducido */
+    display: block;
+    background-color: #d88fa0;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.mouth {
+    position: absolute;
+    top: 40px; /* Ajuste de posición */
+    left: -8px; /* Ajuste de posición */
+    width: 0;
+    height: 0;
+    z-index: 8;
+    display: block;
+    border-bottom: 30px solid #d88fa0; /* Ajuste de tamaño */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-radius: 4px;
+}
+
+.ear {
+    position: absolute;
+    top: -20px; /* Ajuste de posición */
+    left: 30px; /* Ajuste de posición */
+    width: 25px; /* Ancho reducido */
+    height: 20px; /* Alto reducido */
+    display: block;
+    border-top-right-radius: 60px;
+    background-color: #d88fa0;
+    z-index: 1;
+}
+
+.piggy:before {
+    position: absolute;
+    content: '';
+    top: -15px; /* Ajuste de posición */
+    left: 25px; /* Ajuste de posición */
+    width: 30px; /* Ancho reducido */
+    height: 30px; /* Alto reducido */
+    display: block;
+    border-top-right-radius: 60px;
+    background-color: #cb6980;
+    z-index: -1;
+}
+
+.tail {
+    position: absolute;
+    left: 120px; /* Ajuste de posición */
+    top: 50px; /* Ajuste de posición */
+}
+
+.tail span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px; /* Ancho reducido */
+    height: 3px; /* Alto reducido */
+    transform: rotate(30deg);
+    background-color: #d88fa0;
+}
+
+.tail span:nth-child(2) {
+    left: 1px;
+    top: -20px; /* Ajuste de posición */
+    width: 25px; /* Ancho reducido */
+    height: 25px; /* Alto reducido */
+    transform: rotate(-20deg);
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent #d88fa0 #d88fa0 transparent;
+}
+
+.tail span:nth-child(3) {
+    left: 10px;
+    top: -18px; /* Ajuste de posición */
+    width: 15px; /* Ancho reducido */
+    height: 15px; /* Alto reducido */
+    transform: rotate(-40deg);
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #d88fa0 transparent transparent #d88fa0;
+}
+
+.tail span:nth-child(4) {
+    left: 3px;
+    top: -30px; /* Ajuste de posición */
+    width: 30px; /* Ancho reducido */
+    height: 30px; /* Alto reducido */
+    transform: rotate(-40deg);
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent transparent #d88fa0 transparent;
+}
+
+.eye {
+    position: absolute;
+    left: 15px; /* Ajuste de posición */
+    top: 30px; /* Ajuste de posición */
+    width: 15px; /* Ancho reducido */
+    height: 15px; /* Alto reducido */
+    transform: rotate(45deg);
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #555 transparent transparent #555;
+    animation: blink 5s linear infinite;
+}
+
+@keyframes blink {
+    0%, 19% {
+        border-color: #555 transparent transparent #555;
+    }
+    20%, 60% {
+        border-color: transparent #555 #555 transparent;
+    }
+    61%, 100% {
+        border-color: #555 transparent transparent #555;
+    }
+}
+
+.hole {
+    position: absolute;
+    left: 50px; /* Ajuste de posición */
+    top: 0;
+    width: 30px; /* Ancho reducido */
+    height: 3px; /* Alto reducido */
+    background-color: #555;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.coin-wrap {
+    position: absolute;
+    top: 0;
+    left: -8px;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform-origin: bottom center;
+    animation: trembling 5s linear infinite, moveCoin 5s linear infinite;
+}
+
+.coin {
+    position: absolute;
+    top: 50px; /* Ajuste de posición */
+    left: 50px; /* Ajuste de posición */
+    z-index: 9;
+    width: 30px; /* Ancho reducido */
+    height: 30px; /* Alto reducido */
+    border-radius: 50%;
+    border: 3px solid #e67e22;
+    background-color: #f39c12;
+    text-align: center;
+    line-height: 30px; /* Ajuste de línea */
+    font-size: 20px; /* Ajuste de tamaño de fuente */
+    font-weight: 500;
+    color: rgba(32,32,32,0.5);
+    box-shadow: inset 0 0 4px #777;
+}
+
+@keyframes moveCoin {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+    19% {
+        opacity: 1;
+        top: 0;
+    }
+    21%, 22% {
+        top: -3px;
+    }
+    23%, 24% {
+        top: -7px;
+    }
+    25%, 26% {
+        top: -10px;
+    }
+    27%, 28% {
+        top: -15px;
+    }
+    29%, 30% {
+        top: -20px;
+    }
+    60% {
+        top: -20px;
+    }
+    66% {
+        top: -100px;
+        opacity: 1;
+    }
+    67% {
+        top: -100px;
+        opacity: 0;
+    }
+    99% {
+        top: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.legs {
+    position: absolute;
+    bottom: 5px; /* Ajuste de posición */
+    left: 30px; /* Ajuste de posición */
+    width: 20px; /* Ancho reducido */
+    height: 30px; /* Alto reducido */
+    display: block;
+    background-color: #cb6980;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.legs:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 15px; /* Ancho reducido */
+    height: 6px; /* Alto reducido */
+    display: block;
+    background-color: #d88fa0;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
+    z-index: 1;
+}
+
+.legs.back {
+    left: 80px; /* Ajuste de posición */
+}
+
+.consejos {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    width: 100%; /* Cambiar a 100% para que se ajuste al contenedor */
+    max-width: 300px; /* Ancho máximo */
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 10px auto; /* Espaciado entre tarjetas */
+}
+
+.card svg {
+    width: 48px;
+    fill: #4a7c2a; /* Color verde oscuro para el ícono */
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(226, 240, 217, 0.8);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.4;
+    font-family: 'Courier New', Courier, monospace;
+}
