@@ -66,7 +66,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     box-sizing: border-box;
-    margin-top: 40% !important;
+    margin-top: 200% !important;
 }
 
 html, body {
