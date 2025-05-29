@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
     $('#dateForm').on('submit', function(event) {
         event.preventDefault(); // Evitar el envío del formulario
